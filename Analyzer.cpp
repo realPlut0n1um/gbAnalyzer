@@ -91,31 +91,31 @@ void cartHeaderAnalyze(char* &data){
 	   then we take the index and apply that to the nLicenseeNameTable to get the Licensee name  */
 	// Store codes for the Licensee
 	std::string nLicenseeCodeTable[62] = {"00","01","08","13","18",
-					                              "19","20","22","24","25",
-					                              "28","29","30","31","32",
-					                              "33","34","35","37","38",
-					                              "39","41","42","44","46",
-					                              "47","49","50","51","52",
-					                              "53","54","55","56","57",
-					                              "58","59","60","61","64",
-					                              "67","69","70","71","72",
-					                              "73","75","78","79","80",
-					                              "83","86","87","91","92",
-					                              "93","95","96","97","99","A4"};
+					      "19","20","22","24","25",
+					      "28","29","30","31","32",
+					      "33","34","35","37","38",
+					      "39","41","42","44","46",
+					      "47","49","50","51","52",
+					      "53","54","55","56","57",
+					      "58","59","60","61","64",
+					      "67","69","70","71","72",
+					      "73","75","78","79","80",
+					      "83","86","87","91","92",
+					      "93","95","96","97","99","A4"};
 
 	// Store a table of the names related to the licensee code table
 	std::string nLicenseeNameTable[62] = {"None", "Nintendo R&D1", "Capcom", "EA", "Hudson Soft", 
-                                        "b-ai", "kss", "pow", "PCM Complete", "San-x", 
-					                              "Kemco Japan", "Seta", "Viacom", "Nintendo",
-					                              "Bandai", "Ocean/Acclaim", "Konami", "Hector", 
-					                              "Taito", "Hudson", "Banpresto", "Ubisoft", "Atlus", 
-					                              "Malibu", "Angel", "Bullet-Proof","Irem", "Absolute", 
-					                              "Acclaim", "Activision", "American Sammy", "Konami", "Hi Tech Entertainment", 
-					                              "LJN", "Matchbox", "Mattel", "Milton Bradley", "Titus", 
-					                              "Virgin", "LucasArts", "Ocean", "EA", "Infogrames", 
-					                              "Interplay", "Broderbund", "Sculptured", "Sci", "THQ", 
-					                              "Accolade", "Misawa", "Lozc", "Tokuma Shoten Intermedia", "Tsukuda Original", 
-					                              "Chunsoft", "Video System", "Ocean/Acclaim", "Varie", "Yonezawa/s'pal", "Kaneko", "Pack in soft", "Konami (Yu-Gi-Oh!)"};
+                                              "b-ai", "kss", "pow", "PCM Complete", "San-x", 
+					      "Kemco Japan", "Seta", "Viacom", "Nintendo",
+					      "Bandai", "Ocean/Acclaim", "Konami", "Hector", 
+					      "Taito", "Hudson", "Banpresto", "Ubisoft", "Atlus", 
+					      "Malibu", "Angel", "Bullet-Proof","Irem", "Absolute", 
+					      "Acclaim", "Activision", "American Sammy", "Konami", "Hi Tech Entertainment", 
+					      "LJN", "Matchbox", "Mattel", "Milton Bradley", "Titus", 
+					      "Virgin", "LucasArts", "Ocean", "EA", "Infogrames", 
+					      "Interplay", "Broderbund", "Sculptured", "Sci", "THQ", 
+					      "Accolade", "Misawa", "Lozc", "Tokuma Shoten Intermedia", "Tsukuda Original", 
+					      "Chunsoft", "Video System", "Ocean/Acclaim", "Varie", "Yonezawa/s'pal", "Kaneko", "Pack in soft", "Konami (Yu-Gi-Oh!)"};
 
 	bool foundLicensee = false;
 	uint8_t licenseeIndx = 0;
@@ -173,20 +173,20 @@ void cartHeaderAnalyze(char* &data){
 	std::string hwInfo = (hwInfoStream.str());
   
 	std::string hwCode[28] = {"00", "01", "02", "03", 
-				                    "05", "06", "08", "09", 
-				                    "0B", "0C", "0D", "0F", 
-				                    "10", "11", "12", "13", 
-				                    "19", "1A", "1B", "1C", 
-				                    "1D", "1E", "20", "22", 
-				                    "FC", "FD", "FE", "FF"};
+				  "05", "06", "08", "09", 
+				  "0B", "0C", "0D", "0F", 
+				  "10", "11", "12", "13", 
+				  "19", "1A", "1B", "1C", 
+				  "1D", "1E", "20", "22", 
+				  "FC", "FD", "FE", "FF"};
                             
 	std::string hwType[28] = {"ROM ONLY", "MBC1", "MBC1+RAM" , "MBC1+RAM+BATTERY",
-			                      "MBC2", "MBC2+BATTERY", "ROM+RAM", "ROM+RAM+BATTERY",
-				                    "MMM01", "MMM01+RAM", "MMM01+RAM+BATTERY", "MBC3+TIMER+BATTERY",
-				                    "MBC3+TIMER+RAM+BATTERY", "MBC3", "MBC3+RAM", "MBC3+RAM+BATTERY",
-				                    "MBC5", "MBC5+RAM", "MBC5+RAM+BATTERY", "MBC5+RUMBLE",
-				                    "MBC5+RUMBLE+RAM", "MBC5+RUMBLE+RAM+BATTERY", "MBC6", "MBC7+SENSOR+RUMBLE+RAM+BATTERY",
-				                    "POCKET CAMERA", "BANDAI TAMA5", "HuC3", "HuC1+RAM+BATTERY"};
+			          "MBC2", "MBC2+BATTERY", "ROM+RAM", "ROM+RAM+BATTERY",
+				  "MMM01", "MMM01+RAM", "MMM01+RAM+BATTERY", "MBC3+TIMER+BATTERY",
+				  "MBC3+TIMER+RAM+BATTERY", "MBC3", "MBC3+RAM", "MBC3+RAM+BATTERY",
+				  "MBC5", "MBC5+RAM", "MBC5+RAM+BATTERY", "MBC5+RUMBLE",
+				  "MBC5+RUMBLE+RAM", "MBC5+RUMBLE+RAM+BATTERY", "MBC6", "MBC7+SENSOR+RUMBLE+RAM+BATTERY",
+				  "POCKET CAMERA", "BANDAI TAMA5", "HuC3", "HuC1+RAM+BATTERY"};
 	
 	std::cout << "\n[LOCATION] = (0x0147)" << std::endl;
 	

@@ -30,6 +30,8 @@ std::string convHex(std::string hexVals){
 }
 	
 // This is used to analyze the header information for the GB Cartridge
+// TODO: Edit how we parse char* &data, we use it as a string passed into stringstream, instead we can just static_cast<uint8_t> and act
+// on the traditional data instead of acting with strings
 void cartHeaderAnalyze(char* &data){
 
 	// [NINTENDO HEADER]
@@ -89,6 +91,9 @@ void cartHeaderAnalyze(char* &data){
 
 	/* Now i KNOW this is a shitty way of doing this, but we index into nLicenseeCodeTable, match it with our data from the ROM
 	   then we take the index and apply that to the nLicenseeNameTable to get the Licensee name  */
+	
+	// TODO: implement std::map<uint8_t, std::string> nLicenseeCodeTable;
+	// This is a better method instead of using the method we have described here
 	// Store codes for the Licensee
 	std::string nLicenseeCodeTable[62] = {"00","01","08","13","18",
 					      "19","20","22","24","25",
